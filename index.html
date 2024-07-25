@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerenciamento de Despesas</title>
+
+  <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Menu de navegação -->
+  <nav>
+    <ul>
+      <li><a href="#resume">Resumo</a></li>
+      <li><a href="#newItem">Adicionar</a></li>
+      <li><a href="#filters">Filtros</a></li>
+      <li><a href="#table">Tabela</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="resume" id="resume">
+      <div>
+        Entradas: R$
+        <span class="incomes">0.00</span>
+      </div>
+      <div>
+        Saídas: R$
+        <span class="expenses">0.00</span>
+      </div>
+      <div>
+        Total: R$
+        <span class="total">0.00</span>
+      </div>
+    </div>
+
+    <!-- Formulário para adicionar novos itens -->
+    <div class="newItem" id="newItem">
+      <div class="divDesc">
+        <label for="desc">Descrição</label>
+        <input type="text" id="desc" />
+      </div>
+      <div class="divAmount">
+        <label for="amount">Valor</label>
+        <input type="number" id="amount" />
+      </div>
+      <div class="divType">
+        <label for="type">Tipo</label>
+        <select id="type">
+          <option value="">Selecione</option>
+          <option value="Entrada">Entrada</option>
+          <option value="Saída">Saída</option>
+        </select>
+      </div>
+      <div class="divPerson">
+        <label for="person">Pessoa</label>
+        <select id="person">
+          <option value="">Selecione</option>
+          <option value="Bruno">Bruno</option>
+          <option value="Vanessa">Vanessa</option>
+        </select>
+      </div>
+      <div class="divCard">
+        <label for="card">Cartão</label>
+        <select id="card">
+          <option value="">Selecione</option>
+          <option value="Inter">Inter</option>
+          <option value="NuBank">NuBank</option>
+          <option value="Hiper">Hiper</option>
+          <option value="Pix">Pix</option>
+        </select>
+      </div>
+      <div class="divMonth">
+        <label for="month">Mês</label>
+        <select id="month">
+          <option value="">Selecione</option>
+          <option value="Janeiro">Janeiro</option>
+          <option value="Fevereiro">Fevereiro</option>
+          <option value="Março">Março</option>
+          <option value="Abril">Abril</option>
+          <option value="Maio">Maio</option>
+          <option value="Junho">Junho</option>
+          <option value="Julho">Julho</option>
+          <option value="Agosto">Agosto</option>
+          <option value="Setembro">Setembro</option>
+          <option value="Outubro">Outubro</option>
+          <option value="Novembro">Novembro</option>
+          <option value="Dezembro">Dezembro</option>
+        </select>
+      </div>
+      <button id="btnNew">Incluir</button>
+    </div>
+
+    <!-- Filtros -->
+    <div class="filters" id="filters">
+      <div>
+        <label for="filterType">Tipo</label>
+        <select id="filterType">
+          <option value="">Todos</option>
+          <option value="Entrada">Entrada</option>
+          <option value="Saída">Saída</option>
+        </select>
+      </div>
+      <div>
+        <label for="filterMonth">Mês</label>
+        <select id="filterMonth">
+          <option value="">Todos</option>
+          <option value="Janeiro">Janeiro</option>
+          <option value="Fevereiro">Fevereiro</option>
+          <option value="Março">Março</option>
+          <option value="Abril">Abril</option>
+          <option value="Maio">Maio</option>
+          <option value="Junho">Junho</option>
+          <option value="Julho">Julho</option>
+          <option value="Agosto">Agosto</option>
+          <option value="Setembro">Setembro</option>
+          <option value="Outubro">Outubro</option>
+          <option value="Novembro">Novembro</option>
+          <option value="Dezembro">Dezembro</option>
+        </select>
+      </div>
+      <div>
+        <label for="filterPerson">Pessoa</label>
+        <select id="filterPerson">
+          <option value="">Todos</option>
+          <option value="Bruno">Bruno</option>
+          <option value="Vanessa">Vanessa</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Tabela para exibir itens -->
+    <div class="divTable" id="table">
+      <table>
+        <thead>
+          <tr>
+            <th>Descrição</th>
+            <th class="columnAmount">Valor</th>
+            <th class="columnPerson">Pessoa</th>
+            <th class="columnCard">Cartão</th>
+            <th class="columnMonth">Mês</th>
+            <th class="columnType">Tipo</th>
+            <th class="columnAction"></th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
