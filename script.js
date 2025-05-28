@@ -75,10 +75,11 @@ function insertItem(item, index) {
     <td>${item.month}</td>
     <td class="columnType">
       ${
-        item.type === "Entrada"
-          ? '<i class="bx bxs-chevron-up-circle"></i>'
-          : '<i class="bx bxs-chevron-down-circle"></i>'
-      }
+  item.type === "Entrada"
+    ? '<i class="bx bxs-chevron-up-circle entrada-icon"></i>'
+    : '<i class="bx bxs-chevron-down-circle saida-icon"></i>'
+}
+
     </td>
     <td class="columnAction">
       <button onclick="deleteItem(${index})"><i class='bx bx-trash'></i></button>

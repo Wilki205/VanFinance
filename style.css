@@ -1,295 +1,128 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    outline: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
 }
 
 body {
-    height: 100vh;
-    display: flex;
-    flex-direction: column; /* Alterado para coluna para incluir o menu */
-    justify-content: flex-start; /* Alinhar ao topo */
-    align-items: center;
-    background-color: #f5f5f5; /* Fundo leve para contraste visual */
-    padding-top: 20px; /* Espaçamento no topo da página */
+  display: flex;
+  min-height: 100vh;
+  background-color: #f5f5f5;
 }
 
-/* Menu superior */
 nav {
-    width: 100%;
-    max-width: 550px; /* Largura máxima do menu */
-    display: flex;
-    justify-content: center;
-    background-color: #2C73D2; /* Cor de fundo do menu */
-    padding: 10px 20px; /* Padding para espaçamento interno */
-    border-radius: 10px; /* Bordas arredondadas */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra leve */
-    margin-bottom: 20px; /* Espaçamento abaixo do menu */
+  width: 80px;
+  background-color: #333;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  position: fixed;
+  height: 100vh;
 }
 
-nav ul {
-    list-style: none; /* Remover marcadores de lista */
-    display: flex; /* Alinhar itens em linha */
-    gap: 20px; /* Espaço entre os itens do menu */
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 20px 0;
+  font-size: 28px;
+  transition: transform 0.2s;
 }
 
-nav ul li {
-    font-size: 16px; /* Tamanho da fonte dos itens do menu */
-}
-
-nav ul li a {
-    color: white; /* Cor do texto dos links */
-    text-decoration: none; /* Remover sublinhado dos links */
-    transition: color 0.3s; /* Transição suave para a cor do texto */
-}
-
-nav ul li a:hover {
-    color: #f0f8ff; /* Cor do texto dos links ao passar o mouse */
+nav a:hover {
+  transform: scale(1.2);
+  color: #4CAF50;
 }
 
 main {
-    max-width: 550px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px; /* Padding para melhor espaçamento */
-    background-color: #ffffff; /* Fundo branco para o conteúdo principal */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra leve para destaque */
-    border-radius: 10px; /* Bordas arredondadas */
+  margin-left: 80px;
+  flex: 1;
+  padding: 20px;
 }
 
 .resume {
-    display: flex;
-    padding: 10px 0;
-    gap: 20px; /* Ajuste do espaço entre os itens */
-    width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  font-weight: bold;
 }
 
-.resume > div {
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0px 0px 5px #ccc;
-    border-radius: 10px;
-    padding: 10px;
-    width: 150px;
-    background-color: #ffffff; /* Fundo branco para os cards */
-    text-align: center; /* Centralizar o texto para melhor visualização */
-    color: #333; /* Cor do texto */
+.newItem form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.newItem label {
+  font-weight: bold;
+}
+
+.newItem input, .newItem select, .newItem button {
+  padding: 8px;
+  width: 100%;
+}
+
+.newItem button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.newItem button i {
+  margin-right: 6px;
 }
 
 .filters {
-    display: flex;
-    gap: 10px; /* Espaço entre os filtros */
-    margin-bottom: 20px; /* Espaçamento abaixo dos filtros */
-    width: 100%; /* Ocupa toda a largura disponível */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
 }
 
-.filterItem {
-    display: flex;
-    flex-direction: column;
-    width: 100%; /* Garantir que cada filtro ocupe a largura disponível */
-}
-
-.newItem {
-    display: flex;
-    gap: 15px; /* Ajuste do espaço entre os itens do formulário */
-    align-items: center; /* Alinhar os itens centralmente */
-    width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 20px; /* Espaçamento entre a seção resume e o formulário */
-}
-
-.divDesc, .divAmount, .divType, .divPerson, .divCard, .divMonth {
-    display: flex;
-    flex-direction: column;
-    width: calc(50% - 15px); /* Ajuste da largura para mais espaçamento em telas menores */
-    margin-bottom: 15px; /* Espaçamento inferior dos campos */
-}
-
-input, select {
-    padding: 10px; /* Aumentar o padding para um campo mais espaçoso */
-    border: 2px solid #ccc; /* Borda mais espessa para os campos */
-    border-radius: 10px; /* Bordas arredondadas para um visual mais moderno */
-    transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s; /* Adicionando transição suave */
-    background-color: #ffffff; /* Fundo branco para os campos */
-    font-size: 14px; /* Ajustar o tamanho da fonte para melhor legibilidade */
-}
-
-input:focus, select:focus {
-    border-color: #2C73D2; /* Borda destacada ao focar */
-    box-shadow: 0 0 8px rgba(44, 115, 210, 0.3); /* Sombra mais pronunciada ao focar */
-    background-color: #f0f8ff; /* Fundo leve ao focar */
-}
-
-/* Adicionando estilos para labels */
-label {
-    font-size: 14px; /* Tamanho da fonte dos labels */
-    color: #333; /* Cor dos labels */
-    margin-bottom: 5px; /* Espaço abaixo dos labels */
-    display: block; /* Exibir labels como blocos */
-}
-
-.newItem > button {
-    position: relative; /* Posição relativa para o efeito do botão */
-    background-color: #2C73D2;
-    color: white;
-    border: none;
-    padding: 10px 20px; /* Aumentar o padding para um botão mais espaçoso */
-    border-radius: 10px; /* Bordas arredondadas para os botões */
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s; /* Adicionar transição para efeito de hover */
-    overflow: hidden; /* Esconder overflow para o efeito */
-}
-
-.newItem > button::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 300%;
-    height: 300%;
-    background-color: rgba(255, 255, 255, 0.15); /* Cor do efeito de brilho */
-    transition: all 0.75s cubic-bezier(0.25, 0.1, 0.25, 1); /* Transição suave */
-    transform: translate(-50%, -50%) rotate(45deg) translateY(-100%); /* Posição inicial do efeito */
-}
-
-.newItem > button:hover::before {
-    transform: translate(-50%, -50%) rotate(45deg) translateY(100%); /* Movimento do efeito no hover */
-}
-
-.newItem > button:hover {
-    background-color: #1b4f8b; /* Cor um pouco mais escura no hover */
-    transform: scale(1.05); /* Efeito de aumento no hover */
-}
-
-/* Adicionando estilo para o botão com foco */
-button:focus {
-    outline: 3px solid #2C73D2;
-    outline-offset: 2px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-}
-
-.divTable {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 20px; /* Espaçamento entre o formulário e a tabela */
+.filters input, .filters select {
+  padding: 8px;
+  min-width: 180px;
 }
 
 table {
-    width: 100%;
-    max-width: 1000px; /* Limitar a largura máxima da tabela */
-    padding: 10px; /* Padding interno para a tabela */
-    border-radius: 5px;
-    border-collapse: collapse; /* Colapso de borda para melhor visualização */
-    background-color: #ffffff; /* Fundo branco para a tabela */
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); /* Sombra leve para destaque */
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
 }
 
 th, td {
-    text-align: start;
-    padding: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
 }
 
 th {
-    border-bottom: 2px solid #ddd; /* Borda inferior nos cabeçalhos */
-    font-size: 14px; /* Tamanho da fonte nos cabeçalhos */
+  background-color: #f0f0f0;
 }
 
-td {
-    font-size: 13px; /* Tamanho da fonte nas células da tabela */
+.columnType i {
+  font-size: 20px;
+}
+.entrada-icon {
+  color: #2ecc71; /* Verde para entrada */
 }
 
-tbody tr:nth-child(odd) {
-    background-color: #f9f9f9; /* Cor de fundo alternada para as linhas ímpares */
+.saida-icon {
+  color: #e74c3c; /* Vermelho para saída */
 }
 
-.columnAction > button {
-    font-size: 14px; /* Tamanho reduzido do ícone de excluir */
-    background: none; /* Remover fundo dos botões */
-    border: none; /* Remover borda dos botões */
-    cursor: pointer; /* Mãozinha ao passar o mouse */
-}
 
-/* Ajustar largura das colunas da tabela */
-.columnAmount, .columnPerson, .columnCard, .columnMonth {
-    width: 15%;
-}
-
-.columnType {
-    width: 10%;
-    text-align: center;
-}
-
-/* Adicionando mídia queries para responsividade */
-@media (max-width: 414px) {
-    body {
-        padding-top: 30px; /* Maior espaçamento no topo da página em telas menores */
-    }
-  
-    main {
-        margin-top: 20px; /* Espaçamento acima do conteúdo principal em telas menores */
-    }
-  
-    .resume {
-        flex-direction: row; /* Mudar para linha para manter os balões lado a lado */
-        gap: 10px; /* Espaço reduzido entre os balões */
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .resume > div {
-        width: 100px; /* Reduzir a largura dos balões */
-        padding: 8px; /* Reduzir o padding interno dos balões */
-        font-size: 12px; /* Reduzir o tamanho da fonte */
-    }
-
-    .newItem {
-        flex-direction: column;
-        gap: 10px; /* Espaço entre os itens do formulário */
-    }
-
-    .divDesc, .divAmount, .divType, .divPerson, .divCard, .divMonth {
-        width: 100%; /* Garantir que os divs ocupem toda a largura disponível */
-    }
-
-    .divDesc, .divAmount {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between; /* Espaçar os itens horizontalmente */
-        gap: 10px; /* Espaço entre os itens */
-    }
-
-    .divDesc > label, .divAmount > label, .divType > label, .divPerson > label, .divCard > label {
-        flex: 1; /* Garantir que os labels ocupem uma parte proporcional do espaço disponível */
-    }
-
-    .divDesc > input, .divAmount > input, .divType > select, .divPerson > select, .divCard > select {
-        flex: 2; /* Garantir que os inputs e selects ocupem mais espaço */
-    }
-
-    .newItem > button {
-        width: 100%; /* Botão ocupa toda a largura disponível */
-        margin-top: 10px;
-    }
-
-    .divTable {
-        width: 100%;
-        margin-top: 20px;
-    }
-
-    table {
-        padding: 5px; /* Reduzir o padding interno da tabela em telas menores */
-    }
-
-    th, td {
-        font-size: 12px; /* Reduzir o tamanho da fonte em telas menores */
-        padding: 8px; /* Reduzir o padding das células em telas menores */
-    }
+.columnAction button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #e74c3c;
+  font-size: 20px;
 }
